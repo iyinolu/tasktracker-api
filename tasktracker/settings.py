@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('TASKTRACKER_SECRET_KEY', default='foo')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = DEBUG = os.environ.get('DEBUG', default=0)
 
-ALLOWED_HOSTS = ["tasktracker-webapi.herokuapp.com"]
+ALLOWED_HOSTS = ["tasktracker-webapi.herokuapp.com", "127.0.0.1"]
 
 
 # Application definition

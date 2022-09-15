@@ -6,8 +6,8 @@ from core import views
 
 router = DefaultRouter(trailing_slash=True)
 
-router.register(r'user', views.UserViewSet, basename="user-crud")
-router.register(r'create', views.CreateUserViewSet, basename="signin")
+router.register(r'api/user', views.UserViewSet, basename="user-crud")
+router.register(r'api/create', views.CreateUserViewSet, basename="signin")
 
 urlpatterns = [
     path('', include(router.urls))
