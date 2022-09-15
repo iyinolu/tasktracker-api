@@ -21,12 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-lx&ks2#&@8orx9py0sto6c2qefcr2!gfr3691jo*y&zclr7)v&'
+SECRET_KEY = os.environ.get('TASKTRACKER_SECRET_KEY', default='foo')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = DEBUG = os.environ.get('DEBUG', default=0)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["tasktracker-webapi.herokuapp.com"]
 
 
 # Application definition
