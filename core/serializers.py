@@ -7,11 +7,7 @@ from .models import User
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ("id", "username", "email", "bio", "password")
-        extra_kwargs = {
-            'first_name': {'required': True},
-            'last_name': {'required': True}
-        }
+        fields = ("id", "username", "email", "bio")
 
 
 class CreateUserSerializer(serializers.ModelSerializer):
@@ -23,6 +19,10 @@ class CreateUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ["first_name", "last_name", "username", "email", "password"]
+        extra_kwargs = {
+            'first_name': {'required': True},
+            'last_name': {'required': True}
+        }
 
     def create(self, validated_data):
         instance = User.objects.create(

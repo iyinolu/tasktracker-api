@@ -5,8 +5,9 @@ from rest_framework.routers import DefaultRouter
 from core import views
 
 router = DefaultRouter(trailing_slash=True)
-router.register(r'user', views.UserViewSet)
-router.register(r'create-user', views.CreateUserViewSet)
+
+router.register(r'user', views.UserViewSet, basename="user-crud")
+router.register(r'create', views.CreateUserViewSet, basename="signin")
 
 urlpatterns = [
     path('', include(router.urls))
