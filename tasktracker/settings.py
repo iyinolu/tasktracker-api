@@ -26,7 +26,14 @@ SECRET_KEY = os.environ.get('TASKTRACKER_SECRET_KEY', default='foo')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = DEBUG = os.environ.get('DEBUG', default=0)
 
-ALLOWED_HOSTS = ["tasktracker-webapi.herokuapp.com", "127.0.0.1"]
+ALLOWED_HOSTS = ["tasktracker-webapi.herokuapp.com", "127.0.0.1", "localhost"]
+
+CORS_ORIGIN_WHITELIST = (
+    "https://iyinolu.github.io",
+    'http://localhost:3001',
+    'http://localhost:3000',
+)
+
 
 
 # Application definition
